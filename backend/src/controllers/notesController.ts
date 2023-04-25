@@ -1,7 +1,7 @@
 import { RequestHandler } from "express";
-import NoteModel from "../models/notes";
 import createHttpError from "http-errors";
 import mongoose from "mongoose";
+import NoteModel from "../models/notes";
 import { assertIsDefined } from "../util/assertIsDefined";
 
 export const getNotes: RequestHandler = async (req, res, next) => {

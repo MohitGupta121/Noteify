@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import LoginModal from './components/LoginModal';
 import NavBar from './components/NavBar';
+import NotesPageLoggedInView from './components/NotesPageLoggedInView';
+import NotesPageLoggedOutView from './components/NotesPageLoggedOutView';
 import SignUpModal from './components/SignUpModal';
 import { User } from './models/user';
 import * as NotesApi from "./network/notes_api";
 import styles from "./styles/NotesPage.module.css";
-import NotesPageLoggedInView from './components/NotesPageLoggedInView';
-import NotesPageLoggedOutView from './components/NotesPageLoggedOutView';
 
 function App() {
 
