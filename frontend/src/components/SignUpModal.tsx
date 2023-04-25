@@ -1,10 +1,10 @@
+import { Button, Form, Modal, ModalBody, ModalTitle } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { User } from "../models/user";
+import * as NotesApi from "../network/notes_api";
 import { SignUpCredentials } from "../network/notes_api";
-import * as NotesApi from "../network/notes_api"
-import { Button, Form, Modal, ModalBody, ModalTitle } from "react-bootstrap";
+import styleUtils from "../styles/utils.module.css";
 import TextInputField from "./form/TextInputField";
-import styleUtils from "../styles/utils.module.css"
 
 interface SignUpModalProps {
     onDismiss: () => void,
