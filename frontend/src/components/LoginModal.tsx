@@ -1,19 +1,19 @@
+import { Button, Form, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { User } from "../models/user";
+import * as NotesApi from "../network/notes_api";
 import { LoginCredentials } from "../network/notes_api";
-import * as NotesApi from "../network/notes_api"
-import { Button, Form, Modal, ModalTitle } from "react-bootstrap";
+import styleUtils from "../styles/utils.module.css";
 import TextInputField from "./form/TextInputField";
-import styleUtils from "../styles/utils.module.css"
 
 interface LoginModalProps {
     onDismiss: () => void,
-    onLoginSuccessful: (user: User) => void
+    onLoginSuccessful: (user: User) => void,
 }
 
 const LoginModal = ({ onDismiss, onLoginSuccessful }: LoginModalProps) => {
 
-    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginCredentials>()
+    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginCredentials>();
 
     async function onSubmit(credentials: LoginCredentials) {
         try {
@@ -36,7 +36,7 @@ const LoginModal = ({ onDismiss, onLoginSuccessful }: LoginModalProps) => {
             <Modal.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <TextInputField
-                        name="usernaem"
+                        name="username"
                         label="Username"
                         type="text"
                         placeholder="Username"
@@ -56,8 +56,7 @@ const LoginModal = ({ onDismiss, onLoginSuccessful }: LoginModalProps) => {
                     <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className={styleUtils.width100}
-                    >
+                        className={styleUtils.width100}>
                         Log In
                     </Button>
                 </Form>
