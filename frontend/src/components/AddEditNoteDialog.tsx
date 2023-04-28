@@ -57,8 +57,8 @@ const AddEditNoteDialog = ({ noteToEdit, onDismiss, onNoteSaved }: AddEditNoteDi
                     />
 
                     <TextInputField
-                        name="title"
-                        label="Title"
+                        name="text"
+                        label="Text"
                         as="textarea"
                         rows={5}
                         placeholder="Text"
